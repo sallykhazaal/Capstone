@@ -1,6 +1,9 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
+// import { FloodSharp } from "@mui/icons-material";
+import { useState, useRef, useEffect } from "react";
 import Tesseract from "tesseract.js";
+import chemicalTriggersData from "../../public/data/ChemicalTriggers.json";
+import foodTriggersData from "../../public/data/FoodTriggers.json";
 
 function App() {
   const [selectedImage, setImage] = useState(null);
@@ -9,6 +12,7 @@ function App() {
   const [progress, setProgress] = useState<any>("Analyze Label");
   const [inputValue, setInputValue] = useState<any>("Analyze Label");
   const [showProgress, setShowProgress] = useState(false);
+  const [triggers, setTriggers] = useState<any>([]);
 
   const textareaRef = useRef(null);
 
@@ -17,7 +21,8 @@ function App() {
     setChange(!change);
     console.log("change catch");
   };
-  const handleSubmit = () => {
+
+  const handleSubmit = async () => {
     console.log("handle submit");
 
     if (selectedImage)
@@ -43,8 +48,36 @@ function App() {
         })
         .then((result: any) => {
           setText(result.data.text);
+          // checkIngredientsForTriggers();
         });
   };
+
+  useEffect(() => {
+    console.log(text);
+    const chemicalTriggers = chemicalTriggersData.chemicals.filter(
+      (chemical) => {
+        return text.includes(chemical.name.toUpperCase());
+      }
+    );
+    const foodTriggers = foodTriggersData.foods.filter((food) => {
+      return text.includes(food.name.toUpperCase());
+    });
+    console.log(foodTriggers);
+    setTriggers([...chemicalTriggers, ...foodTriggers]);
+    // console.log(chemicalTriggers);
+  }, [text]);
+  // const checkIngredientsForTriggers = () => {
+  //   console.log(chemicalTriggersData.chemicals[8].name.toUpperCase());
+  //   console.log(text);
+  //   const chemicalTriggers = chemicalTriggersData.chemicals.filter(
+  //     (chemical) => {
+  //       return text.includes(chemical.name.toUpperCase());
+  //     }
+  //   );
+  //   console.log(chemicalTriggers);
+  // };
+  console.log(triggers);
+
   return (
     <div>
       <h1>Label Reader</h1>
@@ -76,13 +109,23 @@ function App() {
             <img src={URL.createObjectURL(selectedImage)} alt="img" />
           </div>
         )}
-        {text && (
+        {/* {text && (
           <textarea
             className="box-text"
             rows={30}
             value={text}
             ref={textareaRef}
           />
+        )} */}
+        {triggers.length > 0 && (
+          <div>
+            <h2>Migraine Triggers:</h2>
+            <ul>
+              {triggers.map((trigger: { name: string; id: number }) => (
+                <li key={trigger.id}>{trigger.name}</li>
+              ))}
+            </ul>
+          </div>
         )}
       </div>
     </div>
