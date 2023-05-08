@@ -54,7 +54,7 @@ function Page() {
 
     // else successful
     console.log(result);
-    return router.push("/admin");
+    return router.push("/profile");
   };
 
   const handleSignUp = async (event: any) => {
@@ -68,7 +68,7 @@ function Page() {
 
     // else successful
     console.log(result);
-    return router.push("/admin");
+    return router.push("/profile");
   };
 
   return (

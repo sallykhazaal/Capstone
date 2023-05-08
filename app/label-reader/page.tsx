@@ -1,5 +1,4 @@
 "use client";
-// import { FloodSharp } from "@mui/icons-material";
 import { useState, useRef, useEffect } from "react";
 import Tesseract from "tesseract.js";
 import chemicalTriggersData from "../../public/data/ChemicalTriggers.json";
@@ -48,7 +47,6 @@ function App() {
         })
         .then((result: any) => {
           setText(result.data.text);
-          // checkIngredientsForTriggers();
         });
   };
 
@@ -64,71 +62,72 @@ function App() {
     });
     console.log(foodTriggers);
     setTriggers([...chemicalTriggers, ...foodTriggers]);
-    // console.log(chemicalTriggers);
   }, [text]);
-  // const checkIngredientsForTriggers = () => {
-  //   console.log(chemicalTriggersData.chemicals[8].name.toUpperCase());
-  //   console.log(text);
-  //   const chemicalTriggers = chemicalTriggersData.chemicals.filter(
-  //     (chemical) => {
-  //       return text.includes(chemical.name.toUpperCase());
-  //     }
-  //   );
-  //   console.log(chemicalTriggers);
-  // };
   console.log(triggers);
 
   return (
-    <div>
-      <h1>Label Reader</h1>
-      <div className="input-wrapper">
-        <label htmlFor="upload">upload</label>
-        <input type="file" name="" id="upload" onChange={handleChange} />
-        <input
-          type="button"
-          onClick={handleSubmit}
-          className={
-            showProgress
-              ? "border border-gray-500 show btn"
-              : "border border-gray-500 btn"
-          }
-          value={inputValue}
-        />
-        {showProgress && (
-          <>
-            {"\t"}
-            <progress value={progress} max="100">
+    <div className="bg-gray-100 min-h-screen">
+      <div className="max-w-4xl mx-auto py-8">
+        <h1 className="text-4xl font-bold mb-8">Ingredient Label Reader</h1>
+        <div className="flex justify-center items-center mb-8">
+          <label
+            htmlFor="upload"
+            className="mr-4 bg-gray-200 py-2 px-4 rounded"
+          >
+            Upload
+          </label>
+          <input
+            type="file"
+            name=""
+            id="upload"
+            onChange={handleChange}
+            className="hidden"
+          />
+          <input
+            type="button"
+            onClick={handleSubmit}
+            className={
+              showProgress
+                ? "bg-gray-200 border border-gray-500 px-4 py-2 rounded show ml-4"
+                : "bg-gray-200 border border-gray-500 px-4 py-2 rounded ml-4"
+            }
+            value={inputValue}
+          />
+          {showProgress && (
+            <progress
+              value={progress}
+              max="100"
+              className="ml-4 rounded-lg h-8 w-48"
+            >
               {progress}
             </progress>
-          </>
-        )}
-      </div>
-      <div className="result">
-        {selectedImage && (
-          <div className="box-image">
-            <img src={URL.createObjectURL(selectedImage)} alt="img" />
-          </div>
-        )}
-        {/* {text && (
-          <textarea
-            className="box-text"
-            rows={30}
-            value={text}
-            ref={textareaRef}
-          />
-        )} */}
-        {triggers.length > 0 && (
-          <div>
-            <h2>Migraine Triggers:</h2>
-            <ul>
-              {triggers.map((trigger: { name: string; id: number }) => (
-                <li key={trigger.id}>{trigger.name}</li>
-              ))}
-            </ul>
-          </div>
-        )}
+          )}
+        </div>
+        <div className="result">
+          {selectedImage && (
+            <div className="box-image mb-8">
+              <img src={URL.createObjectURL(selectedImage)} alt="img" />
+            </div>
+          )}
+          {triggers.length > 0 && (
+            <div>
+              <h2 className="text-2xl font-bold mb-2">Migraine Triggers:</h2>
+              <ul>
+                {triggers.map((trigger: { name: string; id: number }) => (
+                  <li
+                    key={trigger.id}
+                    className="bg-gray-200 px-4 py-2 rounded-lg mb-2"
+                  >
+                    {trigger.name}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
 }
+
 export default App;

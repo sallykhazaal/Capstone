@@ -121,12 +121,29 @@ function Navbar() {
             >
               <MenuItem onClick={handleCloseNavMenu}>
                 <Link href="/">
-                  <Typography textAlign="center">LabelReader</Typography>
+                  <Typography textAlign="center">About</Typography>
                 </Link>
               </MenuItem>
               <MenuItem onClick={handleCloseNavMenu}>
-                <Link href="/about">
+                <Link href="/profile">
                   <Typography textAlign="center">Profile</Typography>
+                </Link>
+              </MenuItem>
+              <MenuItem onClick={handleCloseNavMenu}>
+                <Link href="/chemical-triggers">
+                  <Typography textAlign="center">Chemical Triggers</Typography>
+                </Link>
+              </MenuItem>
+              <MenuItem onClick={handleCloseNavMenu}>
+                <Link href="/food-triggers">
+                  <Typography textAlign="center">Food Triggers</Typography>
+                </Link>
+              </MenuItem>
+              <MenuItem onClick={handleCloseNavMenu}>
+                <Link href="/label-reader">
+                  <Typography textAlign="center">
+                    Ingredient Label Reader
+                  </Typography>
                 </Link>
               </MenuItem>
             </Menu>
@@ -149,20 +166,33 @@ function Navbar() {
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             <Link
               className="px-4 py-5 block"
-              href="/label-reader"
-              onClick={handleCloseNavMenu}
-            >
-              Label Reader
-            </Link>
-            <Link
-              className="px-4 py-5 block"
               href="/profile"
               onClick={handleCloseNavMenu}
             >
               Profile
             </Link>
+            <Link
+              className="px-4 py-5 block"
+              href="/food-triggers"
+              onClick={handleCloseNavMenu}
+            >
+              Food Triggers
+            </Link>
+            <Link
+              className="px-4 py-5 block"
+              href="/chemical-triggers"
+              onClick={handleCloseNavMenu}
+            >
+              Chemical Triggers
+            </Link>
+            <Link
+              className="px-4 py-5 block"
+              href="/label-reader"
+              onClick={handleCloseNavMenu}
+            >
+              Ingredient Label Reader
+            </Link>
           </Box>
-
           <Box sx={{ flexGrow: 0 }}>
             {user ? (
               <Tooltip title="Open settings">
@@ -201,7 +231,7 @@ function Navbar() {
               onClose={handleCloseUserMenu}
             >
               <MenuItem onClick={handleCloseUserMenu}>
-                <Link href="/admin">
+                <Link href="/about">
                   <Typography textAlign="center">Profile</Typography>
                 </Link>
               </MenuItem>
