@@ -1,10 +1,9 @@
 "use client";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import "./globals.css";
 import { AuthContextProvider } from "@/context/AuthContext";
 import { Inter } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({
   children,
@@ -16,10 +15,11 @@ export default function RootLayout({
       <head>
         <title>Sally's Capstone</title>
       </head>
-      <body className={inter.className}>
+      <body>
         <AuthContextProvider>
           <Navbar />
           {children}
+          <Footer />
         </AuthContextProvider>
       </body>
     </html>

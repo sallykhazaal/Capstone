@@ -78,105 +78,107 @@ const Profile: React.FC<ProfileProps> = ({
 
   return (
     <Layout>
-      <Head>
-        <title>My Profile - Migraine Helper App</title>
-      </Head>
-      <div className="container mx-auto py-10">
-        <h1 className="text-3xl font-bold mb-5">My Profile</h1>
-        <div className="grid grid-cols-2 gap-5">
-          <div>
-            <h2 className="text-2xl font-bold mb-3">My Chemical Triggers</h2>
-            <ul className="list-disc pl-5">
-              {chemicalTriggers &&
-                chemicalTriggers.map((trigger) => (
-                  <li key={trigger.name}>
-                    <strong>{trigger.name}</strong>: {trigger.description}
-                  </li>
-                ))}
-            </ul>
+      <main className="flex min-h-screen flex-col items-center justify-between p-24 min-h-screen">
+        <Head>
+          <title>My Profile - Migraine Helper App</title>
+        </Head>
+        <div className="container mx-auto py-10">
+          <h1 className="text-3xl font-bold mb-5">My Profile</h1>
+          <div className="grid grid-cols-2 gap-5">
+            <div>
+              <h2 className="text-2xl font-bold mb-3">My Chemical Triggers</h2>
+              <ul className="list-disc pl-5">
+                {chemicalTriggers &&
+                  chemicalTriggers.map((trigger) => (
+                    <li key={trigger.name}>
+                      <strong>{trigger.name}</strong>: {trigger.description}
+                    </li>
+                  ))}
+              </ul>
+            </div>
+            <div>
+              <h2 className="text-2xl font-bold mb-3">My Migraine Triggers</h2>
+              <ul className="list-disc pl-5">
+                {migraineTriggers &&
+                  migraineTriggers.map((trigger) => (
+                    <li key={trigger.name}>
+                      <strong>{trigger.name}</strong>: {trigger.description}
+                    </li>
+                  ))}
+              </ul>
+            </div>
           </div>
-          <div>
-            <h2 className="text-2xl font-bold mb-3">My Migraine Triggers</h2>
-            <ul className="list-disc pl-5">
-              {migraineTriggers &&
-                migraineTriggers.map((trigger) => (
-                  <li key={trigger.name}>
-                    <strong>{trigger.name}</strong>: {trigger.description}
-                  </li>
-                ))}
-            </ul>
+          <div className="mt-10">
+            <h2 className="text-2xl font-bold mb-3">My Migraine Diary</h2>
+            <FullCalendar
+              plugins={[dayGridPlugin, interactionPlugin]}
+              initialView="dayGridMonth"
+              events={calendarEvents}
+              dateClick={handleDateClick}
+            />
+            {selectedDate && (
+              <form className="mt-5" onSubmit={handleSubmit}>
+                <h3 className="text-xl font-bold mb-3">
+                  {selectedDate.toDateString()}
+                </h3>
+                <div className="mb-3">
+                  <label htmlFor="food">Food item consumed:</label>
+                  <input
+                    type="text"
+                    id="food"
+                    value={foodInput}
+                    onChange={(e) => setFoodInput(e.target.value)}
+                  />
+                </div>
+                <div className="mb-3">
+                  <label htmlFor="food-ingredients">
+                    Known ingredients in food:
+                  </label>
+                  <input
+                    type="text"
+                    id="food ingredients"
+                    value={foodIngredientInput}
+                    onChange={(e) => setFoodIngredientInput(e.target.value)}
+                  />
+                </div>
+                <div className="mb-3">
+                  <label htmlFor="food-time">Time of food consumption:</label>
+                  <input
+                    type="time"
+                    id="food-time"
+                    value={foodTimeInput}
+                    onChange={(e) => setFoodTimeInput(e.target.value)}
+                  />
+                </div>
+                <div className="mb-3">
+                  <label htmlFor="symptoms">Symptoms experienced:</label>
+                  <input
+                    type="text"
+                    id="symptoms"
+                    value={symptomInput}
+                    onChange={(e) => setSymptomInput(e.target.value)}
+                  />
+                </div>
+                <div className="mb-3">
+                  <label htmlFor="symptoms-time">Time of symptom onset:</label>
+                  <input
+                    type="time"
+                    id="symptoms-time"
+                    value={symptomTimeInput}
+                    onChange={(e) => setSymptomTimeInput(e.target.value)}
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                >
+                  Add Entry
+                </button>
+              </form>
+            )}
           </div>
         </div>
-        <div className="mt-10">
-          <h2 className="text-2xl font-bold mb-3">My Migraine Diary</h2>
-          <FullCalendar
-            plugins={[dayGridPlugin, interactionPlugin]}
-            initialView="dayGridMonth"
-            events={calendarEvents}
-            dateClick={handleDateClick}
-          />
-          {selectedDate && (
-            <form className="mt-5" onSubmit={handleSubmit}>
-              <h3 className="text-xl font-bold mb-3">
-                {selectedDate.toDateString()}
-              </h3>
-              <div className="mb-3">
-                <label htmlFor="food">Food item consumed:</label>
-                <input
-                  type="text"
-                  id="food"
-                  value={foodInput}
-                  onChange={(e) => setFoodInput(e.target.value)}
-                />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="food-ingredients">
-                  Known ingredients in food:
-                </label>
-                <input
-                  type="text"
-                  id="food ingredients"
-                  value={foodIngredientInput}
-                  onChange={(e) => setFoodIngredientInput(e.target.value)}
-                />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="food-time">Time of food consumption:</label>
-                <input
-                  type="time"
-                  id="food-time"
-                  value={foodTimeInput}
-                  onChange={(e) => setFoodTimeInput(e.target.value)}
-                />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="symptoms">Symptoms experienced:</label>
-                <input
-                  type="text"
-                  id="symptoms"
-                  value={symptomInput}
-                  onChange={(e) => setSymptomInput(e.target.value)}
-                />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="symptoms-time">Time of symptom onset:</label>
-                <input
-                  type="time"
-                  id="symptoms-time"
-                  value={symptomTimeInput}
-                  onChange={(e) => setSymptomTimeInput(e.target.value)}
-                />
-              </div>
-              <button
-                type="submit"
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-              >
-                Add Entry
-              </button>
-            </form>
-          )}
-        </div>
-      </div>
+      </main>
     </Layout>
   );
 };

@@ -9,6 +9,7 @@ const nextConfig = {
       "organicconsumers.org",
       "myplate-prod.azureedge.us",
       "www.biologyonline.com",
+      "image-api.migraineagain.com",
     ],
   },
 };

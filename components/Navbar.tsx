@@ -72,7 +72,13 @@ function Navbar() {
   }, [user]);
 
   return (
-    <AppBar position="static">
+    <AppBar
+      position="fixed"
+      sx={{
+        color: "white",
+        bgcolor: "#355E3B",
+      }}
+    >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -83,11 +89,11 @@ function Navbar() {
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
-              color: "inherit",
+              color: "white",
               textDecoration: "none",
             }}
           >
-            Migraine Pal
+            TriggerTracker
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -121,7 +127,14 @@ function Navbar() {
             >
               <MenuItem onClick={handleCloseNavMenu}>
                 <Link href="/">
-                  <Typography textAlign="center">About</Typography>
+                  <Typography
+                    sx={{
+                      color: "black",
+                    }}
+                    textAlign="center"
+                  >
+                    About
+                  </Typography>
                 </Link>
               </MenuItem>
               <MenuItem onClick={handleCloseNavMenu}>
@@ -161,7 +174,7 @@ function Navbar() {
               textDecoration: "none",
             }}
           >
-            Migraine Pal
+            TriggerTracker
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             <Link
@@ -196,19 +209,26 @@ function Navbar() {
           <Box sx={{ flexGrow: 0 }}>
             {user ? (
               <Tooltip title="Open settings">
-                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  You are signed in
-                  <Avatar
-                    alt="Default user"
-                    src="/static/images/avatar/2.jpg"
-                  />
+                <IconButton
+                  onClick={handleOpenUserMenu}
+                  sx={{
+                    color: "white",
+                    fontSize: "11px",
+                  }}
+                >
+                  You are signed in.
+                  <Avatar alt="User" src={""} />
                 </IconButton>
               </Tooltip>
             ) : (
               <Button
                 href="/firebase"
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
+                sx={{
+                  my: 2,
+                  color: "white",
+                  display: "block",
+                }}
               >
                 Sign-in
               </Button>

@@ -497,10 +497,6 @@
       "id": 96,
       "name": "Yeast, Yeast Extract, Brewer's Yeast, Nutritional Yeast",
       "chemicals": ["Tyramine", " MSG"]
-    },
-    {
-      "id": 97,
-      "name": "Gelatin"
     }
   ]
 }
