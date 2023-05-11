@@ -60,11 +60,13 @@ function Page() {
         foodItems.some((food: any) => text.includes(food))
       );
     });
-    const foodTriggers = foodTriggersData.foods.filter((food) => {
-      return text.includes(food.name.toUpperCase());
-    });
-    console.log(foodTriggers);
-    setTriggers([...chemicalTriggers, ...foodTriggers]);
+    // const foodTriggers = foodTriggersData.foods.filter((food) => {
+    //   return text.includes(food.name.toUpperCase());
+    // });
+    // console.log(foodTriggers);
+    setTriggers([...chemicalTriggers]);
+
+    // , ...foodTriggers
   }, [text]);
   console.log(triggers);
 

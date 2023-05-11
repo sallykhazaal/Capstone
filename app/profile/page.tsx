@@ -5,6 +5,10 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import Head from "next/head";
 import Layout from "../layout";
+// import ChemicalForm from "@/components/ChemicalForm";
+// import MyChemicalTriggers from "@/components/MyChemicalTriggers";
+// import FoodForm from "@/components/FoodForm";
+// import MyFoodTriggers from "@/components/MyFoodTriggers";
 
 type ChemicalTrigger = {
   name: string;

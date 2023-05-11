@@ -4,6 +4,7 @@ import ChemicalCard from "./ChemicalCard";
 import { Card } from "semantic-ui-react";
 import ChemicalData from "../public/data/ChemicalTriggers.json";
 import "tailwindcss/tailwind.css";
+// import "./ChemicalCollection.css";
 
 interface IChemical {
   id: number;
@@ -22,7 +23,7 @@ function ChemicalCollection() {
       id: chemical.id,
       name: chemical.name,
       image: chemical.image,
-      foods: chemical.foods.split(", "),
+      foods: chemical.foods,
     };
     chemicals.push(currentChemical);
   });

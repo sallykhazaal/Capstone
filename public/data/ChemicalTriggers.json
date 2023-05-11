@@ -27,7 +27,7 @@
     "id": 5,
     "name": "Histamine",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Histamine.svg/1200px-Histamine.svg.png",
-    "foods": "Eggplant, Olive,  Pumpkin, Spinach, Tomato, Apricot, Cherry, Cherries, Citrus, Orange, Lime, Lemon, Grapefruit, Cranberry, Cranberries, Currant, Date, Loganberry, Loganberries, Mulberry, Mulberries, Nectarine, Papaya, Peach, Pineapple, Plum, Prune, Raisin, Raspberry, Raspberries, Strawberry, Strawberries, Cured Meat, Smoked Meat, Aged Meat, Processed Meat, Canned Meat, Tenderized Meats, Bacon, Hot Dogs, Prosciutto, Pepperoni, Lunch Meat, Pre-Ground Meat, Old/Leftover Meat, Liver, Any Game Meat, Fish and Shellfish, Fermented Dairy, Soy, Red Bean, Bleached Flour, Vinegar, Fat or Oil that contain color or preservation, Color, Preservative, Ketchup, Mustard, Relish, Soy Sauce, Anise, Cinnamon, Clove, Curry Powder, Hot Paprika, Nutmeg, Prepared Foods Labelled with Spices, Spice, Chocolate, Flavored Gelatin, Artificial Sweetener, Flavored Syrup, Prepared Desert Filling, Prepared Icing or Frosting, Cake Decoration,  Commercial Candies, Candy, Mincemeat, Miso, Pickle, Anything Fermented, Fruit Juice, Fruit Cocktail, Carbonated Beverages, Soda, Tea, All Drinks with Flavors or Spice, Fermented Beverages, Kombucha, Alcohol, Preservatives"
+    "foods": "Eggplant, Olive,  Pumpkin, Spinach, Tomato, Apricot, Cherry, Citrus, Orange, Lime, Lemon, Grapefruit, Cranberry, Currant, Date, Loganberry, Mulberry, Nectarine, Papaya, Peach, Pineapple, Plum, Prune, Raisin, Raspberry, Strawberry, Bacon, Hot Dogs, Prosciutto, Pepperoni, Liver, Fish and Shellfish, Fermented Dairy, Soy, Red Bean, Bleached Flour, Vinegar, Color, Preservative, Ketchup, Mustard, Relish, Soy Sauce, Anise, Cinnamon, Clove, Curry Powder, Hot Paprika, Nutmeg, Spice, Chocolate, Flavored Gelatin, Artificial Sweetener, Flavored Syrup, Prepared Desert Filling, Prepared Icing or Frosting, Candy, Miso, Pickle, Anything Fermented, Fruit Juice, Soda, Tea, Fermented Beverages, Kombucha, Alcohol, Preservatives"
   },
   {
     "id": 6,
@@ -39,7 +39,7 @@
     "id": 7,
     "name": "Glutamate/MSG",
     "image": "https://www.researchgate.net/publication/328274560/figure/fig1/AS:681532079472642@1539501318575/The-structure-of-monosodium-glutamate.png",
-    "foods": "Ajinomoto and Accent, Hydrolyzed Plant Protein, Protein Isolate, Hydrolyzed Vegetable Protein, Soy Protein, Soy Isolate, Soy Concentrate, Whey Protein, Whey Isolate, Whey COncentrate, Autolyzed Yeast, Yeast Extract, Yeasr Food, Nutritional Yeast, Glutamate, Glutamic Acid, Calcium Caseinate, Kombu Extract, Hydrolyzed Corn Gluten, Malted Barley, Malt Extract, Sodium Caseinate, Umami, Gelatin, Seasonings, Soy Sauce, Spices (without further specification), Carrageenan, Boullion, Most Broths and Stocks, Natural Flavors, Natural Flavoring, Citric Acid, Xanthan Gum"
+    "foods": "Hydrolyzed Plant Protein, Protein Isolate, Hydrolyzed Vegetable Protein, Soy Protein, Soy Isolate, Soy Concentrate, Whey Protein, Whey Isolate, Autolyzed Yeast, Yeast Extract, Yeasr Food, Nutritional Yeast, Glutamate, Glutamic Acid, Calcium Caseinate, Kombu Extract, Hydrolyzed Corn Gluten, Malted Barley, Malt Extract, Sodium Caseinate, Umami, Gelatin, Seasonings, Soy Sauce, Spices (without further specification), Carrageenan, Boullion, Most Broths and Stocks, Natural Flavor, Natural Flavoring, Citric Acid, Xanthan Gum"
   },
   {
     "id": 8,

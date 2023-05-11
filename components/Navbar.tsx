@@ -91,6 +91,10 @@ function Navbar() {
               display: { xs: "none", md: "flex" },
               color: "white",
               textDecoration: "none",
+              fontFamily: "monospace", // Set the font family to monospace
+              "@media (max-width: 600px)": {
+                fontFamily: "monospace", // Set the font family to monospace for smaller screens
+              },
             }}
           >
             TriggerTracker
@@ -251,7 +255,7 @@ function Navbar() {
               onClose={handleCloseUserMenu}
             >
               <MenuItem onClick={handleCloseUserMenu}>
-                <Link href="/about">
+                <Link href="/profile">
                   <Typography textAlign="center">Profile</Typography>
                 </Link>
               </MenuItem>

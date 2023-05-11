@@ -21,7 +21,7 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24 min-h-screen">
-      <div className="text-center">
+      <div className="text-center mb-8">
         <h1 className="text-4xl font-bold mb-4 text-black-800">
           Welcome to TriggerTracker
         </h1>
@@ -33,7 +33,7 @@ export default function Home() {
         </p>
         <Link
           href="/firebase"
-          className="bg- text-white px-4 py-2 rounded-lg shadow-md hover:bg-green-600 transition-colors duration-300"
+          className="bg- text-white px-4 py-2 rounded-lg shadow-md hover:bg-green-600 transition-colors duration-300 mb-10"
           style={{ backgroundColor: "#355E3B" }}
         >
           Get started

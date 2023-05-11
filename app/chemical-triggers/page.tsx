@@ -1,3 +1,4 @@
+"use client";
 import ChemicalCollection from "@/components/ChemicalCollection";
 import React from "react";
 
